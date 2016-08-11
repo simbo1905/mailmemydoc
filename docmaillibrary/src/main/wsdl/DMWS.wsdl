@@ -1,0 +1,3926 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://www.cfhdocmail.com/LiveAutoAPI/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="https://www.cfhdocmail.com/LiveAutoAPI/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://www.cfhdocmail.com/LiveAutoAPI/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="CreateFileMailing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipFile" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFileMailingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFileMailingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMailing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerApplication" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsMono" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsDuplex" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeliveryType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CourierDeliveryToSelf" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DespatchASAP" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DespatchDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressNamePrefix" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressNameFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DiscountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MinEnvelopeSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMailingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateMailingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingFilter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FilterValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingFilterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailingFilterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDeliveryAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fullname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDeliveryAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddDeliveryAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMailingOptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsMono" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsDuplex" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeliveryType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DespatchASAP" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DespatchDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressNamePrefix" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressNameFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DiscountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MinEnvelopeSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMailingOptionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateMailingOptionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AddressedDocument" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressFontCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BackgroundName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanBeginOnBack" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="NextTemplateCanBeginOnBack" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProtectedAreaPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptionPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BleedSupplied" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Copies" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Instances" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="InstancePageNumbers" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CycleInstancesOnCopies" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTemplateFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateBackgroundFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="TemplateGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="BackgroundName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptionPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateBackgroundFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTemplateBackgroundFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateFromLibrary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Copies" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateFromLibraryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTemplateFromLibraryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateFromOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrderRef" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Copies" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateFromOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTemplateFromOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailPackFromLibrary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailPackName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailPackFromLibraryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailPackFromLibraryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailPackFromOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrderRef" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailPackFromOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailPackFromOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDesignerTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateLayout" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressFontCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BleedSupplied" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Copies" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SkipPreviewImageGeneration" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDesignerTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddDesignerTemplateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDesignerImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartDisplayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileData" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="ImageRotation" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImageFitOption" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDesignerImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddDesignerImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDesignerStoredImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartDisplayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImageName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ImageRotation" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImageFitOption" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDesignerStoredImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddDesignerStoredImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDesignerText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartDisplayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextContent" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FontSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FontName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Bold" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Italic" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Underline" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="TextJustification" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FontColourRed" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FontColourGreen" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FontColourBlue" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDesignerTextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddDesignerTextResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMailPackVariableValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="VariableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VariableValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMailPackVariableValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetMailPackVariableValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTemplateVariableValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="TemplateGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="VariableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VariableValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTemplateVariableValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetTemplateVariableValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateUseRule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="TemplateGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="AndGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromEquation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToEquation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateUseRuleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTemplateUseRuleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateBackgroundRule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="TemplateGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="BackgroundName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AndGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromEquation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToEquation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateBackgroundRuleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTemplateBackgroundRuleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataFormat" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="HasHeaders" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SheetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingDelimiter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingFixedWidthChars" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailingListFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingListData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataFormat" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="HasHeaders" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SheetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingDelimiter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingFixedWidthChars" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailingListStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListFromLibrary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingListName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListFromLibraryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailingListFromLibraryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListFromOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrderRef" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListFromOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailingListFromOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address6" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UseForProof" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fullname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DirectLine" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Facsimile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExtraInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerAddressID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerImportID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StreamPages1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StreamPages2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StreamPages3" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom8" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom9" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom10" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSelf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSelfResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddSelfResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutoCorrectAddresses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="CorrectionMethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutoCorrectAddressesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutoCorrectAddressesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMailingListProofOption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProofOption" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMailingListProofOptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetMailingListProofOptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelMailing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelMailingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelMailingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMailing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMailingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteMailingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="TemplateGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteTemplateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMailPack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMailPackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteMailPackResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMailingList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMailingListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteMailingListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTemplateImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TemplateGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTemplateImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTemplateImageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessMailing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerApplication" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Submit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PartialProcess" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="MaxPriceExVAT" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="POReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentMethod" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SkipPreviewImageGeneration" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailSuccessList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailErrorList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HttpPostOnSuccess" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HttpPostOnError" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessMailingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessMailingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailingDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailingDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMailingDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProofFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProofFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProofFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProofImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProofImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProofImageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBalanceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailingGUIDFromOrderRef">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrderRef" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailingGUIDFromOrderRefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMailingGUIDFromOrderRefResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserApproveMailing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserApproveMailingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserApproveMailingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelMailingApproval">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelMailingApprovalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelMailingApprovalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMailings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SubmittedFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="SubmittedTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OutstandingOnly" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="AllUsers" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanContentApproveOnly" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanBudgetApproveOnly" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerApplication" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortColumn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDescending" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMailingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListMailingsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMailingsPageCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SubmittedFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="SubmittedTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OutstandingOnly" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="AllUsers" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanContentApproveOnly" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanBudgetApproveOnly" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerApplication" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMailingsPageCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListMailingsPageCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryTemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AddressedDocumentsOnly" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Inserts" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortColumn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDescending" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryTemplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLibraryTemplatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryTemplatesPageCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AddressedDocumentsOnly" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Inserts" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryTemplatesPageCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLibraryTemplatesPageCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryBackgrounds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortColumn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDescending" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryBackgroundsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLibraryBackgroundsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryBackgroundsPageCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryBackgroundsPageCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLibraryBackgroundsPageCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryMailPacks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortColumn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDescending" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryMailPacksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLibraryMailPacksResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryMailPacksPageCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryMailPacksPageCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLibraryMailPacksPageCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryMailingLists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortColumn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDescending" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryMailingListsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLibraryMailingListsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryMailingListsPageCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLibraryMailingListsPageCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLibraryMailingListsPageCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMailingFilterCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMailingFilterCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListMailingFilterCategoriesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMailingFiltersForCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMailingFiltersForCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListMailingFiltersForCategoryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListTemplateVariables">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TemplateGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="RequiresEntryOnly" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListTemplateVariablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListTemplateVariablesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMailingVariableValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="TemplateGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="VariableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMailingVariableValuesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListMailingVariableValuesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProductTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProductTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProductTypesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListDocumentTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListFormat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListDocumentTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListDocumentTypesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginUserIDPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AllowWebServiceAccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReferredBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HowDidYouFindUs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginUserIDPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AllowWebServiceAccess" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountDataAdministrator" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ApprovingAdministrator" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanSpendCredit" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountRole" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DefaultMailingsToAdvanceMode" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DoNotSendEmails" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserOrganisationStructureLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LinkUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrganisationStructureLevel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrganisationStructureValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserOrganisationStructureLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddUserOrganisationStructureLinkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserSignupData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SignUpHeader" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SignUpValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserSignupDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddUserSignupDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListFileToLibrary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingListName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingListData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="HasHeaders" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SheetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingDelimiter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingFixedWidthChars" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListFileToLibraryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailingListFileToLibraryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListStringToLibrary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingListName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingListData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataFormat" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="HasHeaders" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SheetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingDelimiter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingFixedWidthChars" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListStringToLibraryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailingListStringToLibraryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateFileToLibrary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AddressedDocument" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressFontCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BackgroundName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanBeginOnBack" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="NextTemplateCanBeginOnBack" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProtectedAreaPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptionPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BleedSupplied" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Copies" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Instances" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="InstancePageNumbers" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CycleInstancesOnCopies" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateFileToLibraryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTemplateFileToLibraryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBackgroundFileToLibrary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BackgroundName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptionPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBackgroundFileToLibraryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddBackgroundFileToLibraryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailPackToLibrary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailPackName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailPackToLibraryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailPackToLibraryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateToLibraryMailPack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailPackName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTemplateToLibraryMailPackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTemplateToLibraryMailPackResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListStringForAddressCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingListData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataFormat" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="HasHeaders" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SheetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingDelimiter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingFixedWidthChars" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListStringForAddressCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailingListStringForAddressCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListFileForAddressCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailingListData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataFormat" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="HasHeaders" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SheetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingDelimiter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingFixedWidthChars" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MappingName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMailingListFileForAddressCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMailingListFileForAddressCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PollMailingListAddressCounts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingListGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PollMailingListAddressCountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PollMailingListAddressCountsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailingPriceEstimate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalSides" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailingPriceEstimateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMailingPriceEstimateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPriceEstimate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsMono" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsDuplex" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeliveryType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DiscountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MinEnvelopeSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EnvelopeGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Copies" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalSides" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StandardAddressCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SurchargeAddressCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="WesternEuropeAddressCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="RestOfTheWorldAddressCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPriceEstimateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPriceEstimateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailPackZip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailPackZipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMailPackZipResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailingListZip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailingGUID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="FailureReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailingListZipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMailingListZipResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExtendedCall">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Properties" type="tns:ArrayOfExtendedProperty" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfExtendedProperty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ExtendedProperty" nillable="true" type="tns:ExtendedProperty" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtendedProperty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExtendedCallResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExtendedCallResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExtendedCallDefinition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExtendedCallDefinitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExtendedCallDefinitionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateFileMailingSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFileMailing" />
+  </wsdl:message>
+  <wsdl:message name="CreateFileMailingSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFileMailingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateMailingSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateMailing" />
+  </wsdl:message>
+  <wsdl:message name="CreateMailingSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateMailingResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingFilterSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailingFilter" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingFilterSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailingFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDeliveryAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDeliveryAddress" />
+  </wsdl:message>
+  <wsdl:message name="AddDeliveryAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDeliveryAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMailingOptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMailingOptions" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMailingOptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMailingOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateFileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTemplateFile" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateFileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTemplateFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateBackgroundFileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTemplateBackgroundFile" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateBackgroundFileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTemplateBackgroundFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateFromLibrarySoapIn">
+    <wsdl:part name="parameters" element="tns:AddTemplateFromLibrary" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateFromLibrarySoapOut">
+    <wsdl:part name="parameters" element="tns:AddTemplateFromLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateFromOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTemplateFromOrder" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateFromOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTemplateFromOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailPackFromLibrarySoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailPackFromLibrary" />
+  </wsdl:message>
+  <wsdl:message name="AddMailPackFromLibrarySoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailPackFromLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailPackFromOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailPackFromOrder" />
+  </wsdl:message>
+  <wsdl:message name="AddMailPackFromOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailPackFromOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDesignerTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDesignerTemplate" />
+  </wsdl:message>
+  <wsdl:message name="AddDesignerTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDesignerTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDesignerImageSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDesignerImage" />
+  </wsdl:message>
+  <wsdl:message name="AddDesignerImageSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDesignerImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDesignerStoredImageSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDesignerStoredImage" />
+  </wsdl:message>
+  <wsdl:message name="AddDesignerStoredImageSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDesignerStoredImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDesignerTextSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDesignerText" />
+  </wsdl:message>
+  <wsdl:message name="AddDesignerTextSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDesignerTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMailPackVariableValueSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMailPackVariableValue" />
+  </wsdl:message>
+  <wsdl:message name="SetMailPackVariableValueSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMailPackVariableValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTemplateVariableValueSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTemplateVariableValue" />
+  </wsdl:message>
+  <wsdl:message name="SetTemplateVariableValueSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTemplateVariableValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateUseRuleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTemplateUseRule" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateUseRuleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTemplateUseRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateBackgroundRuleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTemplateBackgroundRule" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateBackgroundRuleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTemplateBackgroundRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListFileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailingListFile" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListFileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailingListFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListStringSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailingListString" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListStringSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailingListStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListFromLibrarySoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailingListFromLibrary" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListFromLibrarySoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailingListFromLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListFromOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailingListFromOrder" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListFromOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailingListFromOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAddress" />
+  </wsdl:message>
+  <wsdl:message name="AddAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSelfSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSelf" />
+  </wsdl:message>
+  <wsdl:message name="AddSelfSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSelfResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutoCorrectAddressesSoapIn">
+    <wsdl:part name="parameters" element="tns:AutoCorrectAddresses" />
+  </wsdl:message>
+  <wsdl:message name="AutoCorrectAddressesSoapOut">
+    <wsdl:part name="parameters" element="tns:AutoCorrectAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMailingListProofOptionSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMailingListProofOption" />
+  </wsdl:message>
+  <wsdl:message name="SetMailingListProofOptionSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMailingListProofOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelMailingSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelMailing" />
+  </wsdl:message>
+  <wsdl:message name="CancelMailingSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelMailingResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMailingSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMailing" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMailingSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMailingResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTemplate" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMailPackSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMailPack" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMailPackSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMailPackResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMailingListSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMailingList" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMailingListSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMailingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTemplateImageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTemplateImage" />
+  </wsdl:message>
+  <wsdl:message name="GetTemplateImageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTemplateImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessMailingSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessMailing" />
+  </wsdl:message>
+  <wsdl:message name="ProcessMailingSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessMailingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMailingDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMailingDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetMailingDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMailingDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProofFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProofFile" />
+  </wsdl:message>
+  <wsdl:message name="GetProofFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProofFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProofImageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProofImage" />
+  </wsdl:message>
+  <wsdl:message name="GetProofImageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProofImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMailingGUIDFromOrderRefSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMailingGUIDFromOrderRef" />
+  </wsdl:message>
+  <wsdl:message name="GetMailingGUIDFromOrderRefSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMailingGUIDFromOrderRefResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserApproveMailingSoapIn">
+    <wsdl:part name="parameters" element="tns:UserApproveMailing" />
+  </wsdl:message>
+  <wsdl:message name="UserApproveMailingSoapOut">
+    <wsdl:part name="parameters" element="tns:UserApproveMailingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelMailingApprovalSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelMailingApproval" />
+  </wsdl:message>
+  <wsdl:message name="CancelMailingApprovalSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelMailingApprovalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListMailingsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListMailings" />
+  </wsdl:message>
+  <wsdl:message name="ListMailingsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListMailingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListMailingsPageCountSoapIn">
+    <wsdl:part name="parameters" element="tns:ListMailingsPageCount" />
+  </wsdl:message>
+  <wsdl:message name="ListMailingsPageCountSoapOut">
+    <wsdl:part name="parameters" element="tns:ListMailingsPageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryTemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLibraryTemplates" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryTemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLibraryTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryTemplatesPageCountSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLibraryTemplatesPageCount" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryTemplatesPageCountSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLibraryTemplatesPageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryBackgroundsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLibraryBackgrounds" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryBackgroundsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLibraryBackgroundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryBackgroundsPageCountSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLibraryBackgroundsPageCount" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryBackgroundsPageCountSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLibraryBackgroundsPageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryMailPacksSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLibraryMailPacks" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryMailPacksSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLibraryMailPacksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryMailPacksPageCountSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLibraryMailPacksPageCount" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryMailPacksPageCountSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLibraryMailPacksPageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryMailingListsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLibraryMailingLists" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryMailingListsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLibraryMailingListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryMailingListsPageCountSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLibraryMailingListsPageCount" />
+  </wsdl:message>
+  <wsdl:message name="ListLibraryMailingListsPageCountSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLibraryMailingListsPageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListMailingFilterCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListMailingFilterCategories" />
+  </wsdl:message>
+  <wsdl:message name="ListMailingFilterCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListMailingFilterCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListMailingFiltersForCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:ListMailingFiltersForCategory" />
+  </wsdl:message>
+  <wsdl:message name="ListMailingFiltersForCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:ListMailingFiltersForCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListTemplateVariablesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListTemplateVariables" />
+  </wsdl:message>
+  <wsdl:message name="ListTemplateVariablesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListTemplateVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListMailingVariableValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListMailingVariableValues" />
+  </wsdl:message>
+  <wsdl:message name="ListMailingVariableValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListMailingVariableValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProductTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProductTypes" />
+  </wsdl:message>
+  <wsdl:message name="ListProductTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProductTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListDocumentTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListDocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="ListDocumentTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListDocumentTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAccount" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserOrganisationStructureLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserOrganisationStructureLink" />
+  </wsdl:message>
+  <wsdl:message name="AddUserOrganisationStructureLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserOrganisationStructureLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSignupDataSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserSignupData" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSignupDataSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserSignupDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListFileToLibrarySoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailingListFileToLibrary" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListFileToLibrarySoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailingListFileToLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListStringToLibrarySoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailingListStringToLibrary" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListStringToLibrarySoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailingListStringToLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateFileToLibrarySoapIn">
+    <wsdl:part name="parameters" element="tns:AddTemplateFileToLibrary" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateFileToLibrarySoapOut">
+    <wsdl:part name="parameters" element="tns:AddTemplateFileToLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBackgroundFileToLibrarySoapIn">
+    <wsdl:part name="parameters" element="tns:AddBackgroundFileToLibrary" />
+  </wsdl:message>
+  <wsdl:message name="AddBackgroundFileToLibrarySoapOut">
+    <wsdl:part name="parameters" element="tns:AddBackgroundFileToLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailPackToLibrarySoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailPackToLibrary" />
+  </wsdl:message>
+  <wsdl:message name="AddMailPackToLibrarySoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailPackToLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateToLibraryMailPackSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTemplateToLibraryMailPack" />
+  </wsdl:message>
+  <wsdl:message name="AddTemplateToLibraryMailPackSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTemplateToLibraryMailPackResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListStringForAddressCountSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailingListStringForAddressCount" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListStringForAddressCountSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailingListStringForAddressCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListFileForAddressCountSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMailingListFileForAddressCount" />
+  </wsdl:message>
+  <wsdl:message name="AddMailingListFileForAddressCountSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMailingListFileForAddressCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="PollMailingListAddressCountsSoapIn">
+    <wsdl:part name="parameters" element="tns:PollMailingListAddressCounts" />
+  </wsdl:message>
+  <wsdl:message name="PollMailingListAddressCountsSoapOut">
+    <wsdl:part name="parameters" element="tns:PollMailingListAddressCountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMailingPriceEstimateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMailingPriceEstimate" />
+  </wsdl:message>
+  <wsdl:message name="GetMailingPriceEstimateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMailingPriceEstimateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceEstimateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPriceEstimate" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceEstimateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPriceEstimateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMailPackZipSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMailPackZip" />
+  </wsdl:message>
+  <wsdl:message name="GetMailPackZipSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMailPackZipResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMailingListZipSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMailingListZip" />
+  </wsdl:message>
+  <wsdl:message name="GetMailingListZipSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMailingListZipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExtendedCallSoapIn">
+    <wsdl:part name="parameters" element="tns:ExtendedCall" />
+  </wsdl:message>
+  <wsdl:message name="ExtendedCallSoapOut">
+    <wsdl:part name="parameters" element="tns:ExtendedCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExtendedCallDefinitionSoapIn">
+    <wsdl:part name="parameters" element="tns:ExtendedCallDefinition" />
+  </wsdl:message>
+  <wsdl:message name="ExtendedCallDefinitionSoapOut">
+    <wsdl:part name="parameters" element="tns:ExtendedCallDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DMWSSoap">
+    <wsdl:operation name="CreateFileMailing">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create mailings from a zip file.  Include an XML file to control the mailings referencing DMWS.xsd for the schema information.</wsdl:documentation>
+      <wsdl:input message="tns:CreateFileMailingSoapIn" />
+      <wsdl:output message="tns:CreateFileMailingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMailing">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a mailing.</wsdl:documentation>
+      <wsdl:input message="tns:CreateMailingSoapIn" />
+      <wsdl:output message="tns:CreateMailingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingFilter">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a mailing filter.  For use by corporate accounts only.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailingFilterSoapIn" />
+      <wsdl:output message="tns:AddMailingFilterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDeliveryAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a delivery address.  For use with courier delivery mailings only.</wsdl:documentation>
+      <wsdl:input message="tns:AddDeliveryAddressSoapIn" />
+      <wsdl:output message="tns:AddDeliveryAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMailingOptions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update mailing options on an existing mailing.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateMailingOptionsSoapIn" />
+      <wsdl:output message="tns:UpdateMailingOptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a template file to a mailing.</wsdl:documentation>
+      <wsdl:input message="tns:AddTemplateFileSoapIn" />
+      <wsdl:output message="tns:AddTemplateFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateBackgroundFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add background file to a template.</wsdl:documentation>
+      <wsdl:input message="tns:AddTemplateBackgroundFileSoapIn" />
+      <wsdl:output message="tns:AddTemplateBackgroundFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFromLibrary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a template from the library.</wsdl:documentation>
+      <wsdl:input message="tns:AddTemplateFromLibrarySoapIn" />
+      <wsdl:output message="tns:AddTemplateFromLibrarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFromOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a template from a previous order.</wsdl:documentation>
+      <wsdl:input message="tns:AddTemplateFromOrderSoapIn" />
+      <wsdl:output message="tns:AddTemplateFromOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailPackFromLibrary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add mail pack from library.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailPackFromLibrarySoapIn" />
+      <wsdl:output message="tns:AddMailPackFromLibrarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailPackFromOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a mail pack from a previous order.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailPackFromOrderSoapIn" />
+      <wsdl:output message="tns:AddMailPackFromOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerTemplate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a designer template.</wsdl:documentation>
+      <wsdl:input message="tns:AddDesignerTemplateSoapIn" />
+      <wsdl:output message="tns:AddDesignerTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerImage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a designer image.</wsdl:documentation>
+      <wsdl:input message="tns:AddDesignerImageSoapIn" />
+      <wsdl:output message="tns:AddDesignerImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerStoredImage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add designer stored image.</wsdl:documentation>
+      <wsdl:input message="tns:AddDesignerStoredImageSoapIn" />
+      <wsdl:output message="tns:AddDesignerStoredImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerText">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add designer text.</wsdl:documentation>
+      <wsdl:input message="tns:AddDesignerTextSoapIn" />
+      <wsdl:output message="tns:AddDesignerTextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMailPackVariableValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set a variable value for all templates containing the variable in the mail pack.</wsdl:documentation>
+      <wsdl:input message="tns:SetMailPackVariableValueSoapIn" />
+      <wsdl:output message="tns:SetMailPackVariableValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTemplateVariableValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set template variable value.</wsdl:documentation>
+      <wsdl:input message="tns:SetTemplateVariableValueSoapIn" />
+      <wsdl:output message="tns:SetTemplateVariableValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateUseRule">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a template use rule.</wsdl:documentation>
+      <wsdl:input message="tns:AddTemplateUseRuleSoapIn" />
+      <wsdl:output message="tns:AddTemplateUseRuleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateBackgroundRule">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a template background rule.</wsdl:documentation>
+      <wsdl:input message="tns:AddTemplateBackgroundRuleSoapIn" />
+      <wsdl:output message="tns:AddTemplateBackgroundRuleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a mailing list file.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailingListFileSoapIn" />
+      <wsdl:output message="tns:AddMailingListFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a mailing list string.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailingListStringSoapIn" />
+      <wsdl:output message="tns:AddMailingListStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFromLibrary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a mailing list from the library.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailingListFromLibrarySoapIn" />
+      <wsdl:output message="tns:AddMailingListFromLibrarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFromOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a mailing list from a previous order.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailingListFromOrderSoapIn" />
+      <wsdl:output message="tns:AddMailingListFromOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add an address.</wsdl:documentation>
+      <wsdl:input message="tns:AddAddressSoapIn" />
+      <wsdl:output message="tns:AddAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSelf">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add self to the mailing.</wsdl:documentation>
+      <wsdl:input message="tns:AddSelfSoapIn" />
+      <wsdl:output message="tns:AddSelfSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoCorrectAddresses">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Auto correct all the addresses added to the mailing.</wsdl:documentation>
+      <wsdl:input message="tns:AutoCorrectAddressesSoapIn" />
+      <wsdl:output message="tns:AutoCorrectAddressesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMailingListProofOption">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set the mailing list proof option.</wsdl:documentation>
+      <wsdl:input message="tns:SetMailingListProofOptionSoapIn" />
+      <wsdl:output message="tns:SetMailingListProofOptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelMailing">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cancel a mailing.</wsdl:documentation>
+      <wsdl:input message="tns:CancelMailingSoapIn" />
+      <wsdl:output message="tns:CancelMailingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMailing">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a mailing.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteMailingSoapIn" />
+      <wsdl:output message="tns:DeleteMailingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a template from a mailing.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteTemplateSoapIn" />
+      <wsdl:output message="tns:DeleteTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMailPack">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete the mail pack from a mailing.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteMailPackSoapIn" />
+      <wsdl:output message="tns:DeleteMailPackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMailingList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete the mailing list from a mailing.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteMailingListSoapIn" />
+      <wsdl:output message="tns:DeleteMailingListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateImage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the template preview image.  Supply 0 for the page to get an index image.</wsdl:documentation>
+      <wsdl:input message="tns:GetTemplateImageSoapIn" />
+      <wsdl:output message="tns:GetTemplateImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessMailing">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Flag the mailing as ready to process.</wsdl:documentation>
+      <wsdl:input message="tns:ProcessMailingSoapIn" />
+      <wsdl:output message="tns:ProcessMailingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get details of the mailing.</wsdl:documentation>
+      <wsdl:input message="tns:GetMailingDetailsSoapIn" />
+      <wsdl:output message="tns:GetMailingDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the current status of the auto mailing process.</wsdl:documentation>
+      <wsdl:input message="tns:GetStatusSoapIn" />
+      <wsdl:output message="tns:GetStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProofFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the mailing PDF proof file.</wsdl:documentation>
+      <wsdl:input message="tns:GetProofFileSoapIn" />
+      <wsdl:output message="tns:GetProofFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProofImage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the mailing proof image for a given page.  Supply 0 for the page to get an index image.</wsdl:documentation>
+      <wsdl:input message="tns:GetProofImageSoapIn" />
+      <wsdl:output message="tns:GetProofImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the current account balance.</wsdl:documentation>
+      <wsdl:input message="tns:GetBalanceSoapIn" />
+      <wsdl:output message="tns:GetBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingGUIDFromOrderRef">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the Mailing GUID from the Order Ref.</wsdl:documentation>
+      <wsdl:input message="tns:GetMailingGUIDFromOrderRefSoapIn" />
+      <wsdl:output message="tns:GetMailingGUIDFromOrderRefSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserApproveMailing">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">User approve the mailing.</wsdl:documentation>
+      <wsdl:input message="tns:UserApproveMailingSoapIn" />
+      <wsdl:output message="tns:UserApproveMailingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelMailingApproval">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">User approve the mailing, optionally auto submitting the mailing.</wsdl:documentation>
+      <wsdl:input message="tns:CancelMailingApprovalSoapIn" />
+      <wsdl:output message="tns:CancelMailingApprovalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListMailings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of mailings.</wsdl:documentation>
+      <wsdl:input message="tns:ListMailingsSoapIn" />
+      <wsdl:output message="tns:ListMailingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingsPageCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the count of pages for a list of mailings.</wsdl:documentation>
+      <wsdl:input message="tns:ListMailingsPageCountSoapIn" />
+      <wsdl:output message="tns:ListMailingsPageCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryTemplates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of library templates or inserts.</wsdl:documentation>
+      <wsdl:input message="tns:ListLibraryTemplatesSoapIn" />
+      <wsdl:output message="tns:ListLibraryTemplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryTemplatesPageCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the count of pages for a list of library templates or inserts.</wsdl:documentation>
+      <wsdl:input message="tns:ListLibraryTemplatesPageCountSoapIn" />
+      <wsdl:output message="tns:ListLibraryTemplatesPageCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryBackgrounds">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of library backgrounds.</wsdl:documentation>
+      <wsdl:input message="tns:ListLibraryBackgroundsSoapIn" />
+      <wsdl:output message="tns:ListLibraryBackgroundsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryBackgroundsPageCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the count of pages for a list of library backgrounds.</wsdl:documentation>
+      <wsdl:input message="tns:ListLibraryBackgroundsPageCountSoapIn" />
+      <wsdl:output message="tns:ListLibraryBackgroundsPageCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailPacks">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of library mail packs.</wsdl:documentation>
+      <wsdl:input message="tns:ListLibraryMailPacksSoapIn" />
+      <wsdl:output message="tns:ListLibraryMailPacksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailPacksPageCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the count of pages for a list of library mail packs.</wsdl:documentation>
+      <wsdl:input message="tns:ListLibraryMailPacksPageCountSoapIn" />
+      <wsdl:output message="tns:ListLibraryMailPacksPageCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailingLists">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of library mailing lists.</wsdl:documentation>
+      <wsdl:input message="tns:ListLibraryMailingListsSoapIn" />
+      <wsdl:output message="tns:ListLibraryMailingListsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailingListsPageCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the count of pages for a list of library mailing lists.</wsdl:documentation>
+      <wsdl:input message="tns:ListLibraryMailingListsPageCountSoapIn" />
+      <wsdl:output message="tns:ListLibraryMailingListsPageCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingFilterCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of mailing filter categories.  For use by corporate accounts only.</wsdl:documentation>
+      <wsdl:input message="tns:ListMailingFilterCategoriesSoapIn" />
+      <wsdl:output message="tns:ListMailingFilterCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingFiltersForCategory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of mailing filter values for a given category.  For use by corporate accounts only.</wsdl:documentation>
+      <wsdl:input message="tns:ListMailingFiltersForCategorySoapIn" />
+      <wsdl:output message="tns:ListMailingFiltersForCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListTemplateVariables">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of template variables for a given template.</wsdl:documentation>
+      <wsdl:input message="tns:ListTemplateVariablesSoapIn" />
+      <wsdl:output message="tns:ListTemplateVariablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingVariableValues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of template variable values.  For use by corporate accounts only.</wsdl:documentation>
+      <wsdl:input message="tns:ListMailingVariableValuesSoapIn" />
+      <wsdl:output message="tns:ListMailingVariableValuesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of product types.</wsdl:documentation>
+      <wsdl:input message="tns:ListProductTypesSoapIn" />
+      <wsdl:output message="tns:ListProductTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListDocumentTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of document types for a product type.</wsdl:documentation>
+      <wsdl:input message="tns:ListDocumentTypesSoapIn" />
+      <wsdl:output message="tns:ListDocumentTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create an Account.  Please contact the support team to obtain permission to use this function.</wsdl:documentation>
+      <wsdl:input message="tns:CreateAccountSoapIn" />
+      <wsdl:output message="tns:CreateAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a user to your account.</wsdl:documentation>
+      <wsdl:input message="tns:AddUserSoapIn" />
+      <wsdl:output message="tns:AddUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserOrganisationStructureLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Link a user to an organisational structure.  For use by corporate accounts only.</wsdl:documentation>
+      <wsdl:input message="tns:AddUserOrganisationStructureLinkSoapIn" />
+      <wsdl:output message="tns:AddUserOrganisationStructureLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserSignupData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add custom signup data for the user.  For use by corporate accounts only.</wsdl:documentation>
+      <wsdl:input message="tns:AddUserSignupDataSoapIn" />
+      <wsdl:output message="tns:AddUserSignupDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFileToLibrary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save a mailing list file to a library mailing list, creating the mailing list if it does not already exists.  Returns MailingListGUID that can be passed to PollMailingListAddressCounts to get the address counts.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailingListFileToLibrarySoapIn" />
+      <wsdl:output message="tns:AddMailingListFileToLibrarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListStringToLibrary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save a mailing list from a string to a library mailing list, creating the mailing list if it does not already exists.   Returns MailingListGUID that can be passed to PollMailingListAddressCounts to get the address counts.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailingListStringToLibrarySoapIn" />
+      <wsdl:output message="tns:AddMailingListStringToLibrarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFileToLibrary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a template file to the library.  This can be used on an order by calling AddTemplateFromLibrary.</wsdl:documentation>
+      <wsdl:input message="tns:AddTemplateFileToLibrarySoapIn" />
+      <wsdl:output message="tns:AddTemplateFileToLibrarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBackgroundFileToLibrary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a background file to the library.  Overwrites the existing background if it already exists.</wsdl:documentation>
+      <wsdl:input message="tns:AddBackgroundFileToLibrarySoapIn" />
+      <wsdl:output message="tns:AddBackgroundFileToLibrarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailPackToLibrary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a mail pack to the library, will return the existing mail pack if already exists.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailPackToLibrarySoapIn" />
+      <wsdl:output message="tns:AddMailPackToLibrarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateToLibraryMailPack">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a template to a library mail pack.</wsdl:documentation>
+      <wsdl:input message="tns:AddTemplateToLibraryMailPackSoapIn" />
+      <wsdl:output message="tns:AddTemplateToLibraryMailPackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListStringForAddressCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save a temporary mailing list from a string to obtaining address counts.  Returns MailingListGUID that can be passed to PollMailingListAddressCounts to get the address counts.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailingListStringForAddressCountSoapIn" />
+      <wsdl:output message="tns:AddMailingListStringForAddressCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFileForAddressCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save a temporary mailing list file to obtaining address counts.  Returns MailingListGUID that can be passed to PollMailingListAddressCounts to get the address counts.</wsdl:documentation>
+      <wsdl:input message="tns:AddMailingListFileForAddressCountSoapIn" />
+      <wsdl:output message="tns:AddMailingListFileForAddressCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PollMailingListAddressCounts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the address counts for a mailing list.  The address counts returned can be passed to GetPriceEstimate to calculate an estimated price.</wsdl:documentation>
+      <wsdl:input message="tns:PollMailingListAddressCountsSoapIn" />
+      <wsdl:output message="tns:PollMailingListAddressCountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingPriceEstimate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get price estimate for a mailing.</wsdl:documentation>
+      <wsdl:input message="tns:GetMailingPriceEstimateSoapIn" />
+      <wsdl:output message="tns:GetMailingPriceEstimateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceEstimate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get price estimate for specified data.</wsdl:documentation>
+      <wsdl:input message="tns:GetPriceEstimateSoapIn" />
+      <wsdl:output message="tns:GetPriceEstimateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMailPackZip">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the mail pack templates in a zip file.</wsdl:documentation>
+      <wsdl:input message="tns:GetMailPackZipSoapIn" />
+      <wsdl:output message="tns:GetMailPackZipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingListZip">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the mailing list in a zip file.  Only returns data once the mailing has been submitted.</wsdl:documentation>
+      <wsdl:input message="tns:GetMailingListZipSoapIn" />
+      <wsdl:output message="tns:GetMailingListZipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExtendedCall">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Call an extended method.</wsdl:documentation>
+      <wsdl:input message="tns:ExtendedCallSoapIn" />
+      <wsdl:output message="tns:ExtendedCallSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExtendedCallDefinition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the definition for an extended method.</wsdl:documentation>
+      <wsdl:input message="tns:ExtendedCallDefinitionSoapIn" />
+      <wsdl:output message="tns:ExtendedCallDefinitionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DMWSSoap" type="tns:DMWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateFileMailing">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/CreateFileMailing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMailing">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/CreateMailing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingFilter">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeliveryAddress">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMailingOptions">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/UpdateMailingOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFile">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateBackgroundFile">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateBackgroundFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFromLibrary">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateFromLibrary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFromOrder">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateFromOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailPackFromLibrary">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailPackFromLibrary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailPackFromOrder">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailPackFromOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerTemplate">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddDesignerTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerImage">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddDesignerImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerStoredImage">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddDesignerStoredImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerText">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddDesignerText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMailPackVariableValue">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/SetMailPackVariableValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTemplateVariableValue">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/SetTemplateVariableValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateUseRule">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateUseRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateBackgroundRule">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateBackgroundRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFile">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListString">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFromLibrary">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListFromLibrary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFromOrder">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListFromOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAddress">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSelf">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddSelf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoCorrectAddresses">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AutoCorrectAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMailingListProofOption">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/SetMailingListProofOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelMailing">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/CancelMailing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMailing">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/DeleteMailing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/DeleteTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMailPack">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/DeleteMailPack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMailingList">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/DeleteMailingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateImage">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetTemplateImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessMailing">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ProcessMailing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingDetails">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetMailingDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProofFile">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetProofFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProofImage">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetProofImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingGUIDFromOrderRef">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetMailingGUIDFromOrderRef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserApproveMailing">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/UserApproveMailing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelMailingApproval">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/CancelMailingApproval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMailings">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListMailings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingsPageCount">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListMailingsPageCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryTemplates">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryTemplatesPageCount">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryTemplatesPageCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryBackgrounds">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryBackgrounds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryBackgroundsPageCount">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryBackgroundsPageCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailPacks">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryMailPacks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailPacksPageCount">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryMailPacksPageCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailingLists">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryMailingLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailingListsPageCount">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryMailingListsPageCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingFilterCategories">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListMailingFilterCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingFiltersForCategory">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListMailingFiltersForCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListTemplateVariables">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListTemplateVariables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingVariableValues">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListMailingVariableValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductTypes">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListProductTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListDocumentTypes">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListDocumentTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserOrganisationStructureLink">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddUserOrganisationStructureLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserSignupData">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddUserSignupData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFileToLibrary">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListFileToLibrary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListStringToLibrary">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListStringToLibrary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFileToLibrary">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateFileToLibrary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBackgroundFileToLibrary">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddBackgroundFileToLibrary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailPackToLibrary">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailPackToLibrary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateToLibraryMailPack">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateToLibraryMailPack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListStringForAddressCount">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListStringForAddressCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFileForAddressCount">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListFileForAddressCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PollMailingListAddressCounts">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/PollMailingListAddressCounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingPriceEstimate">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetMailingPriceEstimate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceEstimate">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetPriceEstimate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailPackZip">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetMailPackZip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingListZip">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetMailingListZip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendedCall">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ExtendedCall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendedCallDefinition">
+      <soap:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ExtendedCallDefinition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DMWSSoap12" type="tns:DMWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateFileMailing">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/CreateFileMailing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMailing">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/CreateMailing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingFilter">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingFilter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeliveryAddress">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMailingOptions">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/UpdateMailingOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFile">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateBackgroundFile">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateBackgroundFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFromLibrary">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateFromLibrary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFromOrder">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateFromOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailPackFromLibrary">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailPackFromLibrary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailPackFromOrder">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailPackFromOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerTemplate">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddDesignerTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerImage">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddDesignerImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerStoredImage">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddDesignerStoredImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDesignerText">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddDesignerText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMailPackVariableValue">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/SetMailPackVariableValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTemplateVariableValue">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/SetTemplateVariableValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateUseRule">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateUseRule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateBackgroundRule">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateBackgroundRule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFile">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListString">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFromLibrary">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListFromLibrary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFromOrder">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListFromOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAddress">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSelf">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddSelf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoCorrectAddresses">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AutoCorrectAddresses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMailingListProofOption">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/SetMailingListProofOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelMailing">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/CancelMailing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMailing">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/DeleteMailing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/DeleteTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMailPack">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/DeleteMailPack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMailingList">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/DeleteMailingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateImage">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetTemplateImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessMailing">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ProcessMailing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingDetails">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetMailingDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProofFile">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetProofFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProofImage">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetProofImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingGUIDFromOrderRef">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetMailingGUIDFromOrderRef" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserApproveMailing">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/UserApproveMailing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelMailingApproval">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/CancelMailingApproval" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMailings">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListMailings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingsPageCount">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListMailingsPageCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryTemplates">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryTemplatesPageCount">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryTemplatesPageCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryBackgrounds">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryBackgrounds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryBackgroundsPageCount">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryBackgroundsPageCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailPacks">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryMailPacks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailPacksPageCount">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryMailPacksPageCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailingLists">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryMailingLists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLibraryMailingListsPageCount">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListLibraryMailingListsPageCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingFilterCategories">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListMailingFilterCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingFiltersForCategory">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListMailingFiltersForCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListTemplateVariables">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListTemplateVariables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMailingVariableValues">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListMailingVariableValues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductTypes">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListProductTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListDocumentTypes">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ListDocumentTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserOrganisationStructureLink">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddUserOrganisationStructureLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserSignupData">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddUserSignupData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFileToLibrary">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListFileToLibrary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListStringToLibrary">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListStringToLibrary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFileToLibrary">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateFileToLibrary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBackgroundFileToLibrary">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddBackgroundFileToLibrary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailPackToLibrary">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailPackToLibrary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateToLibraryMailPack">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddTemplateToLibraryMailPack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListStringForAddressCount">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListStringForAddressCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailingListFileForAddressCount">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/AddMailingListFileForAddressCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PollMailingListAddressCounts">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/PollMailingListAddressCounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingPriceEstimate">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetMailingPriceEstimate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceEstimate">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetPriceEstimate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailPackZip">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetMailPackZip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailingListZip">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/GetMailingListZip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendedCall">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ExtendedCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendedCallDefinition">
+      <soap12:operation soapAction="https://www.cfhdocmail.com/LiveAutoAPI/ExtendedCallDefinition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DMWS">
+    <wsdl:port name="DMWSSoap" binding="tns:DMWSSoap">
+      <soap:address location="https://www.cfhdocmail.com/TestAPI2/DMWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DMWSSoap12" binding="tns:DMWSSoap12">
+      <soap12:address location="https://www.cfhdocmail.com/TestAPI2/DMWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

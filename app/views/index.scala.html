@@ -1,20 +1,68 @@
-@*
- * This template takes a single argument, a String containing a
- * message to display.
- *@
 @(message: String)
+@main("File Upload  in Play") {
 
-@*
- * Call the the `main` template with two arguments. The first
- * argument is a `String` with the title of the page, the second
- * argument is an `Html` object containing the body of the page.
- *@
-@main("Welcome to Play") {
+<h1>File Upload In Play</h1>
+@helper.form(action = routes.Application.uploadFile, 'enctype -> "multipart/form-data", 'autocomplete -> "on") {
 
-    @*
-     * Get an `Html` object by calling the built-in Play welcome
-     * template and passing a `String` message.
-     *@
-    @play20.welcome(message, style = "Scala")
+<label for="email">Email</label>
+<input name="email" id="email" placeholder="" required autocomplete="email" value="mycv@@simonmassey.org">
+<br/>
+
+<label for="password">Password</label>
+<input type="password" id="password" name="password" value="L9M-JSa-xGJ-xHy">
+<br/>
+
+<label for="title">Title</label>
+<input name="title" id="title" placeholder="Title" value="Mr" required autocomplete="title">
+<br/>
+
+<label for="fname">First Name</label>
+<input name="fname" id="fname" placeholder="First name" value="Simon" required autocomplete="fname">
+<br/>
+
+<label for="lname">Surname</label>
+<input name="lname" id="lname" placeholder="Surname" value="Massey" required autocomplete="lname">
+<br/>
+
+<label for="address1">Address 1</label>
+<input name="address1" id="address1" placeholder="Address 1" value="Kismet" required autocomplete="address-line1">
+<br/>
+
+<label for="address2">Address 2</label>
+<input name="address2" id="address2" placeholder="Address 2" value="Ormonde Road"  required autocomplete=" address-line2">
+<br/>
+
+<label for="address3">Address 1</label>
+<input name="address3" id="address3" placeholder="Address 3" value="Horsell" required autocomplete="address-level1">
+<br/>
+
+<label for="address4">Address 1</label>
+<input name="address4" id="address4" placeholder="Address 4"  value="Woking" required autocomplete="address-level2">
+<br/>
+
+<label for="address5">Address 1</label>
+<input name="address5" id="address5" placeholder="Address 5" value="Surrey" required autocomplete="postal-code">
+<br/>
+
+<label for="address6">Address 1</label>
+<input name="address6" id="address6" placeholder="Address 6" value="GU21 4RZ" required autocomplete="country">
+<br/>
+
+<label for="reference">Reference</label>
+<input name="reference" id="reference" placeholder="1234" value="" required>
+<br/>
+
+<label for="test">Test Server</label>
+<input type="checkbox" id="test" name="test" value="true" checked="true"/>
+<br/>
+
+<input type="file" name="fileUpload">
+
+<p>
+ <input type="submit" value="Upload">
+</p>
+
+}
+
 
 }
