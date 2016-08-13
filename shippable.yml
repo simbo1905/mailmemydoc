@@ -1,0 +1,13 @@
+language: scala
+
+scala:
+    - 2.11.8
+
+jdk:
+  - oraclejdk8
+
+build:
+
+  ci:
+    - java -version
+    - echo $SHIPPABLE_SCALA_VERSION
