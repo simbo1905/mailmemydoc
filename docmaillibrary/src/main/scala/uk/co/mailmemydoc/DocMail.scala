@@ -94,7 +94,7 @@ class DocmailService(testUri: Boolean = false) {
       partialProcess = false,
       maxPriceExVAT = 10d,
       poReference = None,
-      paymentMethod = None,
+      paymentMethod = Option("Topup"),
       skipPreviewImageGeneration = true,
       emailSuccessList = credentials.username,
       emailErrorList = credentials.username,
@@ -238,8 +238,7 @@ class DocmailService(testUri: Boolean = false) {
       payload <- addTemplateFile(credentials, guid, payloadFileName, payloadFileData)
       mailing <- processMailing(credentials, guid)
     } yield mailing
-
-  }
+   }
 }
 
 object DocMail {
