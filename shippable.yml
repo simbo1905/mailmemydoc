@@ -6,8 +6,10 @@ scala:
 jdk:
   - oraclejdk8
 
+archive:
+  true
+
 build:
 
   ci:
     - sbt dist
-    
